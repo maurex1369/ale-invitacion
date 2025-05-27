@@ -1,0 +1,125 @@
+/* Reset básico y estilos del cuerpo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fce4ec; /* Rosa pálido bonito */
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden; /* Para evitar barras de scroll si el botón SÍ crece mucho */
+    position: relative; /* Para posicionar los corazones */
+}
+
+.container {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 90%;
+    width: 450px; /* Ancho del contenedor principal */
+    z-index: 1; /* Para que esté sobre los corazones */
+}
+
+h1 {
+    color: #e91e63; /* Rosa fuerte */
+    margin-bottom: 25px;
+    font-size: 1.8em; /* Tamaño inicial del título */
+}
+
+.gif-container img {
+    max-width: 200px; /* Ajusta según el GIF */
+    height: auto;
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espacio entre botones */
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em; /* Tamaño de fuente base para botones */
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, font-size 0.2s ease, padding 0.2s ease;
+    /* Transición para todos los cambios */
+}
+
+#yesBtn {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+}
+
+#noBtn {
+    background-color: #f44336; /* Rojo */
+    color: white;
+}
+
+.credits {
+    margin-top: 25px;
+    font-size: 0.8em;
+    color: #777;
+}
+
+.credits a {
+    color: #e91e63;
+    text-decoration: none;
+}
+
+.credits a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para los corazones flotantes */
+.heart {
+    position: fixed; /* Usar fixed para que se muevan por toda la pantalla */
+    font-size: 1.5rem; /* Tamaño de los corazones */
+    color: red;
+    top: -1vh; /* Empezar desde arriba, fuera de la vista */
+    animation: fall linear infinite;
+    user-select: none; /* Para que no se puedan seleccionar */
+    pointer-events: none; /* Para que no interfieran con clics */
+    z-index: 0; /* Detrás del contenedor principal */
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg); /* Caer y rotar */
+        opacity: 0;
+    }
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        width: 90%;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    .gif-container img {
+        max-width: 150px;
+    }
+    button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}
