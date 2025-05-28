@@ -30,7 +30,7 @@ body {
 h1 {
     color: #e91e63; /* Rosa fuerte */
     margin-bottom: 25px;
-    font-size: 1.8em; /* Tamaño inicial del título */
+    font-size: 0.8em; /* Tamaño inicial del título */
 }
 
 .gif-container img {
