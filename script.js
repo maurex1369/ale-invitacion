@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     yesBtn.addEventListener('click', () => {
         // Cambiar el contenido de la página actual
         mainQuestion.textContent = "¡Sabía que dirías que sí! 🥳 ";
-        mainGif.src = "https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif"; // GIF de celebración
+        mainGif.src = "https://media.tenor.com/8LjPMRe8kEsAAAAj/flork-gif.gif"; // GIF de celebración
         
         buttonsDiv.style.display = 'none'; // Ocultar los botones
         creditsP.style.display = 'none'; // Ocultar créditos si quieres
